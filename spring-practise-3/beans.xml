@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-init-method="init" default-destroy-method="destroy">
+
+    <bean id="person" class="com.practise.spring.Person" scope="singleton" factory-method="getInstance" init-method="onCreate" destroy-method="onDestroy" >
+        <constructor-arg value="101" type="int"></constructor-arg>
+        <constructor-arg value="Pratik" type="java.lang.String"></constructor-arg>
+
+        <property name="address" ref="addressreference"></property>
+    </bean>
+
+    <!--2.5-->
+    <bean id="person2" class="com.practise.spring.Person" scope="singleton" factory-method="getInstance">
+        <constructor-arg value="102" type="int"></constructor-arg>
+        <constructor-arg value="Ambani" type="java.lang.String"></constructor-arg>
+
+        <property name="address" ref="addressreference"></property>
+    </bean>
+
+    <bean id="addressreference" class="com.practise.spring.Address">
+        <constructor-arg index="0" value="01"/>
+        <constructor-arg index="1" value="0d2"/>
+    </bean>
+
+</beans>
