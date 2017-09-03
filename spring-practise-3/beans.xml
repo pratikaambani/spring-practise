@@ -12,16 +12,30 @@
     </bean>
 
     <!--2.5-->
-    <bean id="person2" class="com.practise.spring.Person" scope="singleton" factory-method="getInstance">
+<!--
+    <bean id="person2" class="com.practise.spring.Person" scope="singleton" factory-method="createPerson" factory-bean="personfactory">
+        <constructor-arg value="102" type="int"></constructor-arg>
+        <constructor-arg value="Ambani" type="java.lang.String"></constructor-arg>
+
+        <property name="address" ref="addressreference"></property>
+    </bean>
+-->
+
+    <bean id="addressreference" class="com.practise.spring.Address">
+        <constructor-arg index="0" value="01"/>
+        <constructor-arg index="1" value="0d2"/>
+    </bean>
+
+    <!--2.6-->
+    <bean id="person2" class="com.practise.spring.Person" scope="singleton" factory-method="createPerson" factory-bean="personfactory">
         <constructor-arg value="102" type="int"></constructor-arg>
         <constructor-arg value="Ambani" type="java.lang.String"></constructor-arg>
 
         <property name="address" ref="addressreference"></property>
     </bean>
 
-    <bean id="addressreference" class="com.practise.spring.Address">
-        <constructor-arg index="0" value="01"/>
-        <constructor-arg index="1" value="0d2"/>
+    <!--2.6-->
+    <bean id="personfactory" class="com.practise.spring.PersonFactory" >
     </bean>
 
 </beans>
