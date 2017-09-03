@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--
+    <bean id="person" class="com.practise.spring.Person" scope="singleton">
+        <constructor-arg value="1" type="int"></constructor-arg>
+        <constructor-arg value="Pratik" type="java.lang.String"></constructor-arg>
+
+        <property name="address" ref="addressreference"></property>
+    </bean>
+-->
+
+    <bean id="addressreference" class="com.practise.spring.Address">
+        <constructor-arg index="0" value="01"/>
+        <constructor-arg index="1" value="partik"/>
+    </bean>
+
+    <!--2.4-->
+    <bean id="person" class="com.practise.spring.Person" scope="singleton" factory-method="getInstance">
+        <property name="address" ref="addressreference"></property>
+    </bean>
+
+
+</beans>
