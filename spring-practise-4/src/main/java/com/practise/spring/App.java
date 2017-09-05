@@ -17,6 +17,10 @@ public class App {
 
         //2.7 Retrieving details using p namespace
         Address address2 = (Address) context.getBean("addressreference2");
-        System.out.println(address2);
+        System.out.println(address2 + "\n");
+
+        //2.8 Array looping
+        FruitBasket basket = (FruitBasket) context.getBean("basketBean");
+        System.out.println(basket);
     }
 }
