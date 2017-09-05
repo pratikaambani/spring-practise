@@ -5,28 +5,25 @@
        default-init-method="init" default-destroy-method="destroy">
 
     <bean id="jungleBean" class="com.practise.spring.Jungle">
-        <property name="largest" ref="elephant"></property>
+        <property name="largest">
+            <bean class="com.practise.spring.Animal">
+                <property name="name" value="Rinku"></property>
+                <property name="type" value="Elephant"></property>
+            </bean>
+        </property>
         <property name="animals">
             <list>
-                <ref bean="fox"></ref>
-                <ref bean="lion"></ref>
-                <ref bean="elephant"></ref>
+                <bean id="lion" class="com.practise.spring.Animal">
+                    <property name="name" value="Chintu"></property>
+                    <property name="type" value="Lion"></property>
+                </bean>
+
+                <bean id="fox" class="com.practise.spring.Animal">
+                    <property name="name" value="Mintu"></property>
+                    <property name="type" value="Fox"></property>
+                </bean>
             </list>
         </property>
     </bean>
 
-    <bean id="lion" class="com.practise.spring.Animal">
-        <property name="name" value="Chintu"></property>
-        <property name="type" value="Lion"></property>
-    </bean>
-
-    <bean id="elephant" class="com.practise.spring.Animal">
-        <property name="name" value="Rinku"></property>
-        <property name="type" value="Elephant"></property>
-    </bean>
-
-    <bean id="fox" class="com.practise.spring.Animal">
-        <property name="name" value="Mintu"></property>
-        <property name="type" value="Fox"></property>
-    </bean>
 </beans>
