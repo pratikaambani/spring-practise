@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-init-method="init" default-destroy-method="destroy">
+
+    <bean id="jungleBean" class="com.practise.spring.Jungle">
+        <property name="foods">
+            <props>
+                <prop key="gorilla">banana</prop>
+                <prop key="monkey">banana</prop>
+                <prop key="panda">eggs</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>
