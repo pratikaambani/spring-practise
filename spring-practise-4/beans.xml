@@ -5,7 +5,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-init-method="init" default-destroy-method="destroy">
 
-    <bean id="person" class="com.practise.spring.Person" scope="singleton" factory-method="getInstance" init-method="onCreate" destroy-method="onDestroy" >
+    <bean id="person" class="com.practise.spring.Person" scope="singleton" factory-method="getInstance"
+          init-method="onCreate" destroy-method="onDestroy">
         <constructor-arg value="101" type="int"></constructor-arg>
         <constructor-arg value="Pratik" type="java.lang.String"></constructor-arg>
 
@@ -19,7 +20,8 @@
 
     <!--2.7-->
     <!--xmlns:p="http://www.springframework.org/schema/p"-->
-    <bean id="addressreference2" class="com.practise.spring.Address" pns:no="1" pns:area="This is taken from p namespaces"></bean>
+    <bean id="addressreference2" class="com.practise.spring.Address" pns:no="1"
+          pns:area="This is taken from p namespaces"></bean>
 
     <!--2.8-->
     <bean id="basketBean" class="com.practise.spring.FruitBasket">
@@ -33,15 +35,15 @@
                 <value>kiwi</value>
                 <value>pear</value>
             </set>
-<!--
-            <list>
-                <value>apple</value>
-                <value>mango</value>
-                <value>banana</value>
-                <value>kiwi</value>
-                <value>pear</value>
-            </list>
--->
+            <!--
+                        <list>
+                            <value>apple</value>
+                            <value>mango</value>
+                            <value>banana</value>
+                            <value>kiwi</value>
+                            <value>pear</value>
+                        </list>
+            -->
         </constructor-arg>
     </bean>
 

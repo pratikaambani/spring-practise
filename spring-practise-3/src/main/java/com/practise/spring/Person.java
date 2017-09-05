@@ -33,17 +33,17 @@ public class Person {
     }
 
     public static Person getInstance(int id, String name) {
-        System.out.println("getInstance called in beginning only, id: " +id+ " and name: " +name);
+        System.out.println("getInstance called in beginning only, id: " + id + " and name: " + name);
         return new Person(id, name);
     }
 
     public void init() {
-        System.out.println("Bean created: " +this);
+        System.out.println("Bean created: " + this);
     }
 
     //2.4
     public void onCreate() {
-        System.out.println("Person created: " +this);
+        System.out.println("Person created: " + this);
     }
 
     public void onDestroy() {

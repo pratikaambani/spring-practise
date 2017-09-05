@@ -22,7 +22,7 @@ public class FruitBasket {
         buffer.append(name);
         buffer.append("contains: \n");
 
-        for(String fruit : fruits) {
+        for (String fruit : fruits) {
             buffer.append(fruit);
             buffer.append("\n");
         }
